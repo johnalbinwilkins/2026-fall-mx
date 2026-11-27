@@ -24,3 +24,27 @@ while (i < audioElements.length) {
 }
 console.log("audio", audio);
 console.log("clickSounds", clickSounds);
+
+// Find all button elements.
+const allButtons = document.querySelectorAll("button");
+
+// Find Little Professor buttons.
+const calcButtons = document.querySelectorAll(".buttons button");
+
+//
+// HELPER FUNCTIONS
+//
+
+function randomInteger(low, high) {
+  return Math.floor(low + Math.random() * (high - low + 1));
+}
+
+//
+// EVENT LISTENERS
+//
+
+function playRandomClick() {
+  const randomNumber = Math.floor(clickSounds.length * Math.random());
+  const item = clickSounds[randomNumber];
+  item.play();
+}
